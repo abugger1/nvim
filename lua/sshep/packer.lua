@@ -13,19 +13,13 @@ return require('packer').startup(function(use)
   }
 
 -- colors
-use({
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-})
-
-use({
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-})
+-- use({
+--	"folke/tokyonight.nvim",
+--	lazy = false,
+--	priority = 1000,
+--	opts = {},
+--})
+use('navarasu/onedark.nvim')
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -36,6 +30,8 @@ use('nvim-lua/plenary.nvim')
 use('ThePrimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
+use('lewis6991/gitsigns.nvim')
+use('tpope/vim-rhubarb')
 
 use {
   'VonHeikemen/lsp-zero.nvim',

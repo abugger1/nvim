@@ -1,9 +1,10 @@
 require("sshep.remap")
 require("sshep.set")
 require("telescope").load_extension("git_worktree")
+require("onedark")
 
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
+local sshepgroup = augroup('sshepgroup', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -23,8 +24,8 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
---    group = sshepgroup,
+autocmd({ "BufWritePre" }, {
+    group = sshepgroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
@@ -32,4 +33,3 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-
